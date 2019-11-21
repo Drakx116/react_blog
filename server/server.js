@@ -12,9 +12,9 @@ const app = new express;
 const port = 3000;
 
 // MongoDB connection
-mongoose.Promise = global.Promise();
-mongoose.connect('mongodb://localhost/react_blog', {
-    useMongoClient: true
+mongoose.connect('mongodb://localhost/react_blog',{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 });
 
 // Middleware
@@ -22,8 +22,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 // API EndPoint
-app.use('/', dashboard);
-app.use('/users', users);
+app.use("/", dashboard);
+app.use("/users", users);
 
 // Runs server
 app.listen(port, () => {
