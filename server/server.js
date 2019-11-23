@@ -21,7 +21,7 @@ mongoose.connect('mongodb://localhost/react_blog',{
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-// API EndPoint
+// API EndPoints
 app.use("/", dashboard);
 app.use("/users", users);
 

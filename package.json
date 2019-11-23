@@ -9,10 +9,10 @@
   "author": "Drakx116",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "latest",
     "concurrently": "^5.0.0",
     "express": "^4.17.1",
-    "mongoose": "^5.7.12",
-    "body-parser": "latest"
+    "mongoose": "^5.7.12"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
