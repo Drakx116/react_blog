@@ -31,4 +31,14 @@ const addUser = (req ,res) => {
     });
 };
 
-module.exports = { getAllUsers, addUser };
+const deleteUser = (req, res) => {
+    User.deleteOne({_id : req.body.userId }, (error) => {
+        if(error) {
+            res.status(400).send(error);
+        }
+
+        res.json("User well deleted.")
+    });
+};
+
+module.exports = { getAllUsers, addUser, deleteUser };
