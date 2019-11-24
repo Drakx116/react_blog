@@ -6,6 +6,7 @@ const users = require('./src/routes/users');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 // Express
 const app = new express;
@@ -20,6 +21,7 @@ mongoose.connect('mongodb://localhost/react_blog',{
 // Middleware
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(cors());
 
 // API EndPoints
 app.use("/", dashboard);
