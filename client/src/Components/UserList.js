@@ -4,21 +4,21 @@ import axios from 'axios';
 
 export default class PersonList extends React.Component {
     state = {
-        persons: []
+        users: []
     };
 
     componentDidMount() {
-        axios.get(`localhost:3000/users`)
+        axios.get(`http://localhost:3000/users`)
             .then(res => {
-                console.log(res);
-                this.setState({ res });
+                const users = res.data;
+                this.setState({ users });
             })
     }
 
     render() {
         return (
             <ul>
-                { this.state.persons.map(person => <li>{person.name}</li>)}
+                { this.state.users.map(user => <li>{user.pseudo}</li>)}
             </ul>
         )
     }
